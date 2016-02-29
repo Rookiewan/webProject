@@ -1,0 +1,354 @@
+$containerSize: 1000px;
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	padding-top: 50px;
+}
+a {
+	text-decoration: none;
+}
+#container,#dayDetail{
+	position: absolute;
+	text-align: center;
+	-webkit-transition: all 1s;
+}
+#container{
+	left: 50%;
+	width: $containerSize;
+	margin-left: - $containerSize / 2;
+	overflow: hidden;
+}
+#dayDetail{
+	width: $containerSize - 250;
+	//margin-left: - ($containerSize - 250) / 2;
+	-webkit-transform: scale(0);
+	-webkit-transition: all 1s;
+	z-index: 50;
+	background-color: #FFF;
+	.row{
+		margin-top: 5px;
+		height: auto;
+		line-height: 2.5;
+
+		.share{
+			.shareDetail{
+				position: absolute;
+				top: -50px;
+				left: -350px;
+				z-index: 100;
+				width: 370px;
+				min-height: 20px;
+				max-height: 200px;
+				line-height: 20px;
+				overflow: auto;
+				display: none;
+				.list-group-item{
+					&:hover{
+						background-color: #337AB7;
+						color: #FFF;
+					}
+					
+				}
+			}
+			&:hover{
+				.shareDetail{
+					display: block;
+
+				}
+			}
+			
+		}
+		.members {
+			padding-right: 0;
+		}
+
+		input[type='range'] {
+			-webkit-appearance: none;
+			background-color: #337AB7;
+			height: 5px;
+			margin-top: 15px;
+			outline: none;
+		}
+
+	}
+	.dayDetailOpts {
+		width: 100%;
+		margin: 0 auto;
+		border-radius: 4px;
+
+		.optInsert {
+			color: #fff;
+		}
+	}
+	.insert {
+		z-index: 99;
+		position: absolute;
+		width: 60%;
+		left: 50%;
+		margin-left: -35%;
+		top: 105px;
+		display: none;
+		background-color: #e5e5e5;
+
+		#projectDetail {
+			min-height: 140px;
+		}
+	}
+	.breadcrumb{
+		background-color: #337AB7;
+		color: #fff;
+
+		.closeDay{
+			border: 0;
+			outline: none;
+			font-weight: bold;
+		}
+	}
+}
+.date{
+	height: 80px;
+	line-height: 80px;
+
+	.col-xs-1{
+		cursor: pointer;
+
+		&:hover{
+			background-color: lightblue;
+		}
+	}
+}
+.calenderHead{
+	margin-bottom: 10px;
+}
+.date{
+	.day,.dayProcess{
+		position: relative;
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+		margin-left: 5px;
+		border: 1px solid #aaa;
+		border-radius: 2px;
+		cursor: default;
+		text-align: center;
+	}
+	.day{
+		&:hover{
+			background-color: lightblue;
+		}
+	}
+}
+%icon-circle{
+	position: absolute;
+	display: block;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	z-index: 49;
+	top: 5px;
+	right: 5px;
+}
+.tip-unfinished{
+	@extend %icon-circle;
+	background-color: red;
+}
+.tip-finished{
+	@extend %icon-circle;
+	background-color: green;
+}
+/* .color-yellow{
+	background-color: yellow;
+} */
+.totalProcess{
+	margin-top: -60px;
+
+	.dayProcess{
+		background-color: green;
+	}
+}
+#calender-day {
+	display: none;
+}
+
+.toSmall{
+	-webkit-transform: translateX(-50%) scale(0.5);
+}
+.toLarge{
+	-webkit-transform: translateX(0) scale(1);
+}
+.dayDetailShow{
+	-webkit-transform: scale(1) !important;
+
+	-webkit-animation-name: dayDetailAmi;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-fill-mode: forwards;
+	//left: 50%;
+	//top: 50px;
+	//-webkit-transform: translateXY($containerSize / 2 50px);
+	//-webkit-transform: scale(1) !important;
+}
+.dayDetailHide{
+	-webkit-transform: scale(0) !important;
+}
+@-webkit-keyframes dayDetailAmi{
+	100%{
+		left: 350px;
+		top: 50px;
+		//-webkit-transform: scale(1) !important;
+	}
+}
+.calenderBody{
+	-webkit-transition: 500ms;
+}
+
+.details {
+	&>div {
+		width: 45%;
+	}
+	&>div:last-child {
+		float: right;
+	}
+	.projectDetail {
+		display: none;
+	}
+	.timeCF {
+		font-size: 12px;
+	}
+}
+.updateTime {
+	position: absolute;
+	right: 0;
+}
+.finishedTimeInput {
+	//padding: 0;
+	//position: absolute;
+	//top: 43%;
+	//z-index: 9;
+	//opacity: 0;
+}
+.showDetail {
+	-webkit-transition: all 1s;
+	-webkit-transform: rotate(180deg);
+}
+
+table {
+	width: 100%;
+	tbody {
+		position: relative;
+	}
+	th,td {
+		width: 100%;
+		text-align: center;
+		position: relative;
+	}
+
+	/* tr {
+		.projectDetail {
+			&:before {
+				content: '123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123';
+				display: block;
+				position: absolute;
+				width: 210px;
+				bottom: 35px;
+				word-break: break-all;
+				word-wrap: break-word;
+				background-color: lightgreen;
+			}
+		}
+	} */
+	.orderNum {
+		width: 10%;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	.username {
+		width: 10%;
+		max-width: 100px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	.projectName {
+		width: 15%;
+		max-width: 200px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	.projectDetail {
+		width: 30%;
+		max-width: 100px;
+		overflow-x: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		cursor: default;
+	}
+	.projectTime {
+		width: 20%;
+		max-width: 200px;
+		font-size: 12px;
+		padding-left: 10px;
+		padding-right: 10px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	.projectOpts {
+		width: 15%;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+
+		.btn-upd,.btn-finished{
+			margin-right: 2px;
+		}
+	}
+}
+.tips-detail {
+	position: absolute;
+	width: 210px;
+	max-width: 210px;
+	font-size: 12px;
+	word-wrap: break-word;
+	z-index: 9999;
+	background-color: #337AB7;
+	border-radius: 10px;
+	color: #FFF;
+	padding: 10px;
+
+	-webkit-transform: scale(0);
+
+	-webkit-animation-name: tipsShow;
+	-webkit-animation-duration: 500ms;
+	-webkit-animation-fill-mode: forwards;
+	&:after {
+		content: '';
+		position: absolute;
+		display: block;
+		width: 0;
+		height: 0;
+		left: 10%;
+		z-index: -1;
+		border-top: 20px solid #337AB7;
+		border-left: 20px solid transparent;
+	}
+}
+@-webkit-keyframes tipsShow {
+	100% {
+		-webkit-transform: scale(1);
+	}
+}
+.del-effect {
+	-webkit-animation-name: delEffect;
+	-webkit-animation-duration: 500ms;
+}
+@-webkit-keyframes delEffect {
+	100% {
+		opacity: 0;
+		-webkit-transform: scale(0);
+	}
+}

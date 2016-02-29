@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>日历</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+  </head>
+  <body>
+    <div id="container" class="container">
+      <div class="row calenderHead">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-3">
+          <div class="btn-group pull-left">
+            <button id="month" type="button" class="btn btn-primary">月</button>
+            <button id="day" type="button" class="btn btn-default">日</button>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <form class="form-inline">
+            <div class="input-group"><span class="input-group-btn">
+                <button id="monthPrev" type="button" class="btn btn-primary">prev</button></span>
+              <input id="monthNow" value="123123" readonly class="form-control"><span class="input-group-btn">
+                <button id="dayNow" type="button" class="btn btn-default">o</button>
+                <button id="monthNext" type="button" class="btn btn-primary">next</button></span>
+            </div>
+          </form>
+        </div>
+        <div class="col-xs-3"> </div>
+      </div>
+      <!--month-->
+      <div id="calender-month" class="row calenderBody">
+        <div id="monthBody" class="col-xs-12">
+        </div>
+      </div>
+      <!--week-->
+      <!--day-->
+      <div id="calender-day" class="row calenderBody">
+        <div class="row date days"><span class="day">1</span><span class="day">2</span><span class="day">3</span><span class="day">4</span><span class="day">5</span><span class="day">6</span><span class="day">7</span><span class="day">8</span><span class="day">9</span><span class="day">10</span><span class="day">11</span><span class="day">12</span><span class="day">13</span><span class="day">14</span><span class="day">15</span><span class="day">16</span><span class="day">17</span><span class="day">18</span><span class="day">19</span><span class="day">20</span><span class="day">21</span><span class="day">22</span><span class="day">23</span><span class="day">24</span><span class="day">25</span><span class="day">26</span><span class="day">27</span><span class="day">28</span><span class="day">29</span><span class="day">30</span><span class="day">31</span><span class="day">32</span><span class="day">33</span><span class="day">34</span><span class="day">35</span><span class="day">36</span>
+        </div>
+        <div class="row date totalProcess"><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span><span class="dayProcess"></span>
+        </div>
+      </div>
+    </div>
+    <div id="dayDetail" class="container">
+      <div class="row dayHeader">
+        <div class="col-xs-12">
+          <ol class="breadcrumb">
+            <li id="dayYeay"></li>
+            <li id="dayMonth"></li>
+            <li id="dayDate"></li>
+            <button id="closeDay" class="btn btn-primary pull-right closeDay">X</button>
+          </ol>
+        </div>
+      </div>
+      <div class="row insert">
+        <div class="col-xs-2">
+          <div class="form-group">
+            <label for="username">名字</label>
+            <input id="username" placeholder="名字" class="form-control">
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="form-group">
+            <label for="projectName">项目名称</label>
+            <input id="projectName" placeholder="项目名称" class="form-control">
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="form-group">
+            <label for="projectDetail">项目描述</label>
+            <input id="projectDetail" placeholder="项目描述" class="form-control">
+          </div>
+        </div>
+        <div class="col-xs-2">
+          <div class="form-group">
+            <label for="finishedTime">完成时间</label>
+            <input id="finishedTime" placeholder="完成时间" type="date" class="form-control finishedTimeInput">
+          </div>
+        </div>
+        <div class="col-xs-1">
+          <div class="form-group">
+            <label>添加</label>
+            <button id="optInsert" class="btn btn-primary form-control">+</button>
+          </div>
+        </div>
+      </div>
+      <div id="divideLine" class="row">
+        <hr>
+      </div>
+    </div>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <!--script(src='./js/calendarProjcet.js')-->
+    <script src="./js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+CACHE MANIFEST
+#Rev 1
+CACHE:
+view/index.html
+css/bootstrap.min.css
+css/index.css
+js/jquery-1.9.1.min.js
+js/bootstrap.min.js
+js/index.js
+js/indexedDBHelper.js
+
+#FALLBACK:
+#view/index.html  view/index_local.html
+
+NETWORK:
+*

@@ -1,0 +1,361 @@
+doctype
+html
+	head
+		meta(charset='utf-8')
+		title 日历
+		link(rel='stylesheet',href='./css/bootstrap.min.css')
+		link(rel='stylesheet',href='./css/index.css')
+	body
+		#container.container
+			.row.calenderHead
+				.col-xs-2
+				.col-xs-3
+					.btn-group.pull-left
+						//-button#month.btn.btn-primary(type='button') 月
+						//-button#week.btn.btn-default(type='button') 周
+						//-button#day.btn.btn-default(type='button') 日
+				.col-xs-4
+					form.form-inline
+						//-button#monthPrev.btn.btn-primary(type='button') prev
+						.input-group
+							span.input-group-btn
+								button#monthPrev.btn.btn-primary(type='button') prev
+							input.form-control#monthNow(value='123123',readonly)
+							span.input-group-btn
+								button#dayNow.btn.btn-default(type='button') o
+								button#monthNext.btn.btn-primary(type='button') next
+						//-button#monthNext.btn.btn-primary(type='button') next
+						
+				.col-xs-3 
+			//month
+			.row.calenderBody#calender-month
+				.col-xs-12#monthBody
+					//- .row
+					//- 	.col-xs-2 
+					//- 	.col-xs-1 一
+					//- 	.col-xs-1 二
+					//- 	.col-xs-1 三
+					//- 	.col-xs-1 四
+					//- 	.col-xs-1 五
+					//- 	.col-xs-1 六
+					//- 	.col-xs-1 日
+					//- 	.col-xs-3 
+					//- - for(var i = 0; i < 6; i++)
+					//- 	.row.date
+					//- 		.col-xs-2 
+					//- 		.col-xs-1 #{i*7+1}
+					//- 		.col-xs-1 #{i*7+2}
+					//- 		.col-xs-1 #{i*7+3}
+					//- 		.col-xs-1 #{i*7+4}
+					//- 		.col-xs-1 #{i*7+5}
+					//- 		.col-xs-1 #{i*7+6}
+					//- 		.col-xs-1 #{i*7+7}
+					//- 		.col-xs-3 
+			//week
+			//- .row.calenderBody#calender-week
+			//- 	.col-xs-12#weekBody
+			//- 		.row
+			//- 			.col-xs-2 
+			//- 			.col-xs-1 一
+			//- 			.col-xs-1 二
+			//- 			.col-xs-1 三
+			//- 			.col-xs-1 四
+			//- 			.col-xs-1 五
+			//- 			.col-xs-1 六
+			//- 			.col-xs-1 日
+			//- 			.col-xs-3 
+			//- 		- for(var i = 0; i < 4; i++)
+			//- 			.row.date
+			//- 				.col-xs-2 
+			//- 				.col-xs-1 #{i*7+1}
+			//- 				.col-xs-1 #{i*7+2}
+			//- 				.col-xs-1 #{i*7+3}
+			//- 				.col-xs-1 #{i*7+4}
+			//- 				.col-xs-1 #{i*7+5}
+			//- 				.col-xs-1 #{i*7+6}
+			//- 				.col-xs-1 #{i*7+7}
+			//- 				.col-xs-3 
+			//day
+			.row.calenderBody#calender-day
+				.row.date.days
+					- for(var i = 0; i < 3; i++)
+						- for(var j = 0;j < 12;j++) 
+							span.day #{i * 12 + j + 1}
+				.row.date.totalProcess
+					- for(var i = 0; i < 3; i++)
+						- for(var j = 0;j < 12;j++) 
+							span.dayProcess
+
+		//- #dayDetail.container
+		//- 	.row.dayHeader
+		//- 		.col-xs-12
+		//- 			ol.breadcrumb
+		//- 				li#dayYeay
+		//- 				li#dayMonth
+		//- 				li#dayDate
+		//- 				button.btn.btn-primary.pull-right.closeDay#closeDay X
+		//- 	.row
+		//- 		.col-xs-3
+		//- 			label 姓名
+		//- 		.col-xs-7
+		//- 			label 今天的事情
+		//- 		.col-xs-2.share
+		//- 			label 分享
+		//- 	.row.infos
+		//- 		.col-xs-3
+		//- 			label 陈万芳
+		//- 		.col-xs-7
+		//- 			input.form-control
+		//- 		.col-xs-2.share
+		//- 			label ta的分享
+		//- 			.list-group.shareDetail
+		//- 				a(href='javescript:;').list-group-item test1111
+		//- 				a(href='javescript:;').list-group-item test2222
+		//- 				a(href='javescript:;').list-group-item test3333
+		//- 	.row.infos
+		//- 		.col-xs-3
+		//- 			label test
+		//- 		.col-xs-7
+		//- 			input.form-control
+		//- 		.col-xs-2.share
+		//- 			label ta的分享
+		//- 			.list-group.shareDetail
+		//- 				a(href='javescript:;').list-group-item test1111
+		//- 				a(href='javescript:;').list-group-item test2222
+		//- 				a(href='javescript:;').list-group-item test3333
+
+		#dayDetail.container
+			.row.dayHeader
+				.col-xs-12
+					ol.breadcrumb
+						li#dayYeay
+						li#dayMonth
+						li#dayDate
+						button.btn.btn-primary.pull-right.closeDay#closeDay X
+			.row.insert#insertTable
+				.col-xs-12
+					.row.form-group
+						.col-xs-3
+							label(for='username') 名字
+						.col-xs-7
+							input.form-control(id='username',placeholder='名字')
+					.row.form-group
+						.col-xs-3
+							label(for='projectName') 项目名称
+						.col-xs-7
+							input.form-control(id='projectName',placeholder='项目名称')
+					.row.form-group
+						.col-xs-3
+							label(for='projectDetail') 项目描述
+						.col-xs-7
+							textarea.form-control(id='projectDetail',placeholder='项目描述')
+					.row.form-group
+						.col-xs-3
+							label(for='startTime') 开始时间
+						.col-xs-7
+							input.form-control.startTimeInput(id='startTime',placeholder='开始时间',type='date')
+					.row.form-group
+						.col-xs-3
+							label(for='finishedTime') 开始时间
+						.col-xs-7
+							input.form-control.startTimeInput(id='finishedTime',placeholder='完成时间',type='date')
+					.row.form-group
+						.col-xs-3
+							label(for='projectProcess') 进度(0%)
+						.col-xs-7
+							input(id='projectProcess',type='range',min='0',max='100',value='0',step='1')
+					.row.form-group
+						.col-xs-6
+							button.btn.btn-primary.form-control#optInsert 添加
+							button.btn.btn-primary.form-control#optUpdate 修改
+							input.sr-only#hiddenId(type='hidden')
+						.col-xs-6
+							button.btn.btn-primary.form-control#optInsertCancle 取消
+				//-.col-xs-2
+					.form-group
+						label(for='username') 名字
+						input.form-control(id='username',placeholder='名字')
+				//-.col-xs-3
+					.form-group
+						label(for='projectName') 项目名称
+						input.form-control(id='projectName',placeholder='项目名称')
+				//-.col-xs-3
+					.form-group
+						label(for='projectDetail') 项目描述
+						input.form-control(id='projectDetail',placeholder='项目描述')
+				//-.col-xs-3
+					.form-group
+						label(for='finishedTime') 完成时间
+						//-label(for='finishedTime') 2015-09-02 
+						//-i.updateTime @
+						input.form-control.finishedTimeInput(id='finishedTime',placeholder='完成时间',type='date')
+				//-.col-xs-1
+					.form-group
+						label 添加
+						button.btn.btn-primary.form-control#optInsert +
+			.row.bg-primary.dayDetailOpts
+				.col-xs-3
+					a.btn.btn-link.optInsert.pull-left#btnInsert 添加
+				.col-xs-6
+				.col-xs-3.members
+					select.form-control#select
+						option all
+						
+			.row#divideLine
+				hr
+			
+			.row
+				.col-xs-12
+					table.table-bordered.table-hover
+						thead
+							tr
+								th.orderNum #
+								th.username 名字
+								th.projectName 项目名称
+								th.projectDetail 项目描述
+								th.projectTime 时间
+								th.projectOpts 操作
+						tbody#projectTableBody
+							//- tr
+							//- 	td.orderNum 1
+							//- 	td.username 陈万芳
+							//- 	td.projectName 日程管理插件
+							//- 	td.projectDetail 作为一款基于jquery的插件，采用对象写法
+							//- 	td.projectTime 2015-09-06 ~ 2015-09-13
+							//- 	td.projectOpts 
+							//- 		.btns
+							//- 			button.btn.btn-primary.btn-sm.btn-upd 修改
+							//- 			button.btn.btn-primary.btn-sm.btn-del 删除
+							//- tr
+							//- 	td.orderNum 2
+							//- 	td.username 陈万芳
+							//- 	td.projectName 日程管理插件
+							//- 	td.projectDetail 拿巨额好哇开机动画刷客户端
+							//- 	td.projectTime 2015-09-06 ~ 2015-09-13
+							//- 	td.projectOpts 
+							//- 		.btns
+							//- 			button.btn.btn-primary.btn-sm.btn-upd 修改
+							//- 			button.btn.btn-primary.btn-sm.btn-del 删除
+							//- tr
+							//- 	td.orderNum 3
+							//- 	td.username 陈万芳
+							//- 	td.projectName 日程管理插件
+							//- 	td.projectDetail 大会上大受打击啊手机单卡收录机打开拉萨
+							//- 	td.projectTime 2015-09-06 ~ 2015-09-13
+							//- 	td.projectOpts 
+							//- 		.btns
+							//- 			button.btn.btn-primary.btn-sm.btn-upd 修改
+							//- 			button.btn.btn-primary.btn-sm.btn-del 删除
+			//-.row.details
+				.col-xs-6
+					.row.bg-primary
+						.col-xs-12 姓名
+					.row
+						.col-xs-12
+							.row
+								.col-xs-10 项目名称
+								.col-xs-2
+									button.btn.btn-primary.showDetail ^
+							.row.projectDetail
+								.col-xs-12
+									.form-group
+										label.sr-only(for='projectDetail')
+										textarea.form-control(id='projectDetail',placeholder='项目名称')
+							.row.projectDetail
+								.col-xs-5
+									.form-group
+										label.timeCF(for='creatTime') 2015-09-02 15:04:01
+								.col-xs-2 ~
+								.col-xs-5
+									.form-group
+										label.timeCF 2015-09-02 16:33:31
+					.row
+						.col-xs-12
+							.row
+								.col-xs-10 项目名称
+								.col-xs-2
+									button.btn.btn-primary.showDetail ^
+							.row.projectDetail
+								.col-xs-12
+									.form-group
+										label.sr-only(for='projectDetail')
+										textarea.form-control(id='projectDetail',placeholder='项目名称')
+							.row.projectDetail
+								.col-xs-5
+									.form-group
+										label.timeCF(for='creatTime') 2015-09-02 15:04:01
+								.col-xs-2 ~
+								.col-xs-5
+									.form-group
+										label.timeCF 2015-09-02 16:33:31
+				.col-xs-6
+					.row.bg-primary
+						.col-xs-12 姓名
+					.row
+						.col-xs-12
+							.row
+								.col-xs-10 项目名称
+								.col-xs-2
+									button.btn.btn-primary.showDetail ^
+							.row.projectDetail
+								.col-xs-12
+									.form-group
+										label.sr-only(for='projectDetail')
+										textarea.form-control(id='projectDetail',placeholder='项目名称')
+							.row.projectDetail
+								.col-xs-5
+									.form-group
+										label.timeCF(for='creatTime') 2015-09-02 15:04:01
+								.col-xs-2 ~
+								.col-xs-5
+									.form-group
+										label.timeCF 2015-09-02 15:04:01
+			//-.row.details
+				.col-xs-6
+					.row.bg-primary
+						.col-xs-12 姓名
+					.row
+						.col-xs-12
+							.row
+								.col-xs-10 项目名称
+								.col-xs-2
+									button.btn.btn-primary.showDetail ^
+							.row.projectDetail
+								.col-xs-12
+									.form-group
+										label.sr-only(for='projectDetail')
+										textarea.form-control(id='projectDetail',placeholder='项目名称')
+							.row.projectDetail
+								.col-xs-5
+									.form-group
+										label.timeCF(for='creatTime') 2015-09-02 15:04:01
+								.col-xs-2 ~
+								.col-xs-5
+									.form-group
+										label.timeCF 2015-09-02 16:33:31
+				.col-xs-6
+					.row.bg-primary
+						.col-xs-12 姓名
+					.row
+						.col-xs-12
+							.row
+								.col-xs-10 项目名称
+								.col-xs-2
+									button.btn.btn-primary.showDetail ^
+							.row.projectDetail
+								.col-xs-12
+									.form-group
+										label.sr-only(for='projectDetail')
+										textarea.form-control(id='projectDetail',placeholder='项目名称')
+							.row.projectDetail
+								.col-xs-5
+									.form-group
+										label.timeCF(for='creatTime') 2015-09-02 15:04:01
+								.col-xs-2 ~
+								.col-xs-5
+									.form-group
+										label.timeCF 2015-09-02 16:33:31
+		script(src='./js/jquery-1.9.1.min.js')
+		script(src='./js/bootstrap.min.js')
+		//script(src='./js/calendarProjcet.js')
+		script(src='./js/index.js')

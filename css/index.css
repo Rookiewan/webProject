@@ -1,0 +1,331 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-top: 50px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#container, #dayDetail {
+  position: absolute;
+  text-align: center;
+  -webkit-transition: all 1s;
+}
+
+#container {
+  left: 50%;
+  width: 1000px;
+  margin-left: -500px;
+  overflow: hidden;
+}
+
+#dayDetail {
+  width: 750px;
+  -webkit-transform: scale(0);
+  -webkit-transition: all 1s;
+  z-index: 50;
+  background-color: #FFF;
+}
+#dayDetail .row {
+  margin-top: 5px;
+  height: auto;
+  line-height: 2.5;
+}
+#dayDetail .row .share .shareDetail {
+  position: absolute;
+  top: -50px;
+  left: -350px;
+  z-index: 100;
+  width: 370px;
+  min-height: 20px;
+  max-height: 200px;
+  line-height: 20px;
+  overflow: auto;
+  display: none;
+}
+#dayDetail .row .share .shareDetail .list-group-item:hover {
+  background-color: #337AB7;
+  color: #FFF;
+}
+#dayDetail .row .share:hover .shareDetail {
+  display: block;
+}
+#dayDetail .row .members {
+  padding-right: 0;
+}
+#dayDetail .row input[type='range'] {
+  -webkit-appearance: none;
+  background-color: #337AB7;
+  height: 5px;
+  margin-top: 15px;
+  outline: none;
+}
+#dayDetail .dayDetailOpts {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+#dayDetail .dayDetailOpts .optInsert {
+  color: #fff;
+}
+#dayDetail .insert {
+  z-index: 99;
+  position: absolute;
+  width: 60%;
+  left: 50%;
+  margin-left: -35%;
+  top: 105px;
+  display: none;
+  background-color: #e5e5e5;
+}
+#dayDetail .insert #projectDetail {
+  min-height: 140px;
+}
+#dayDetail .breadcrumb {
+  background-color: #337AB7;
+  color: #fff;
+}
+#dayDetail .breadcrumb .closeDay {
+  border: 0;
+  outline: none;
+  font-weight: bold;
+}
+
+.date {
+  height: 80px;
+  line-height: 80px;
+}
+.date .col-xs-1 {
+  cursor: pointer;
+}
+.date .col-xs-1:hover {
+  background-color: lightblue;
+}
+
+.calenderHead {
+  margin-bottom: 10px;
+}
+
+.date .day, .date .dayProcess {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  margin-left: 5px;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  cursor: default;
+  text-align: center;
+}
+.date .day:hover {
+  background-color: lightblue;
+}
+
+.tip-unfinished, .tip-finished {
+  position: absolute;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  z-index: 49;
+  top: 5px;
+  right: 5px;
+}
+
+.tip-unfinished {
+  background-color: red;
+}
+
+.tip-finished {
+  background-color: green;
+}
+
+/* .color-yellow{
+	background-color: yellow;
+} */
+.totalProcess {
+  margin-top: -60px;
+}
+.totalProcess .dayProcess {
+  background-color: green;
+}
+
+#calender-day {
+  display: none;
+}
+
+.toSmall {
+  -webkit-transform: translateX(-50%) scale(0.5);
+}
+
+.toLarge {
+  -webkit-transform: translateX(0) scale(1);
+}
+
+.dayDetailShow {
+  -webkit-transform: scale(1) !important;
+  -webkit-animation-name: dayDetailAmi;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.dayDetailHide {
+  -webkit-transform: scale(0) !important;
+}
+
+@-webkit-keyframes dayDetailAmi {
+  100% {
+    left: 350px;
+    top: 50px;
+  }
+}
+.calenderBody {
+  -webkit-transition: 500ms;
+}
+
+.details > div {
+  width: 45%;
+}
+.details > div:last-child {
+  float: right;
+}
+.details .projectDetail {
+  display: none;
+}
+.details .timeCF {
+  font-size: 12px;
+}
+
+.updateTime {
+  position: absolute;
+  right: 0;
+}
+
+.showDetail {
+  -webkit-transition: all 1s;
+  -webkit-transform: rotate(180deg);
+}
+
+table {
+  width: 100%;
+  /* tr {
+  	.projectDetail {
+  		&:before {
+  			content: '123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123';
+  			display: block;
+  			position: absolute;
+  			width: 210px;
+  			bottom: 35px;
+  			word-break: break-all;
+  			word-wrap: break-word;
+  			background-color: lightgreen;
+  		}
+  	}
+  } */
+}
+table tbody {
+  position: relative;
+}
+table th, table td {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+table .orderNum {
+  width: 10%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+table .username {
+  width: 10%;
+  max-width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+table .projectName {
+  width: 15%;
+  max-width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+table .projectDetail {
+  width: 30%;
+  max-width: 100px;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: default;
+}
+table .projectTime {
+  width: 20%;
+  max-width: 200px;
+  font-size: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+table .projectOpts {
+  width: 15%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+table .projectOpts .btn-upd, table .projectOpts .btn-finished {
+  margin-right: 2px;
+}
+
+.tips-detail {
+  position: absolute;
+  width: 210px;
+  max-width: 210px;
+  font-size: 12px;
+  word-wrap: break-word;
+  z-index: 9999;
+  background-color: #337AB7;
+  border-radius: 10px;
+  color: #FFF;
+  padding: 10px;
+  -webkit-transform: scale(0);
+  -webkit-animation-name: tipsShow;
+  -webkit-animation-duration: 500ms;
+  -webkit-animation-fill-mode: forwards;
+}
+.tips-detail:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  left: 10%;
+  z-index: -1;
+  border-top: 20px solid #337AB7;
+  border-left: 20px solid transparent;
+}
+
+@-webkit-keyframes tipsShow {
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+.del-effect {
+  -webkit-animation-name: delEffect;
+  -webkit-animation-duration: 500ms;
+}
+
+@-webkit-keyframes delEffect {
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+  }
+}

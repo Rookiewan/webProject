@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-top: 50px;
+}
+
+#container, #dayDetail {
+  position: absolute;
+  text-align: center;
+  -webkit-transition: all 1s;
+}
+
+#container {
+  left: 50%;
+  width: 1000px;
+  margin-left: -500px;
+  overflow: hidden;
+}
+
+#dayDetail {
+  width: 750px;
+  -webkit-transform: scale(0);
+  -webkit-transition: all 1s;
+  z-index: 50;
+  background-color: #FFF;
+}
+#dayDetail .row {
+  margin-top: 5px;
+  height: auto;
+  line-height: 2.5;
+}
+#dayDetail .row .share .shareDetail {
+  position: absolute;
+  top: -50px;
+  left: -350px;
+  z-index: 100;
+  width: 370px;
+  min-height: 20px;
+  max-height: 200px;
+  line-height: 20px;
+  overflow: auto;
+  display: none;
+}
+#dayDetail .row .share .shareDetail .list-group-item:hover {
+  background-color: #337AB7;
+  color: #FFF;
+}
+#dayDetail .row .share:hover .shareDetail {
+  display: block;
+}
+#dayDetail .breadcrumb {
+  background-color: #337AB7;
+  color: #fff;
+}
+#dayDetail .breadcrumb .closeDay {
+  border: 0;
+  outline: none;
+  font-weight: bold;
+}
+
+.date {
+  height: 80px;
+  line-height: 80px;
+}
+.date .col-xs-1 {
+  cursor: pointer;
+}
+.date .col-xs-1:hover {
+  background-color: lightblue;
+}
+
+.calenderHead {
+  margin-bottom: 10px;
+}
+
+.date .day, .date .dayProcess {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  margin-left: 5px;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  cursor: default;
+  text-align: center;
+}
+.date .day:hover {
+  background-color: lightblue;
+}
+
+.tip-unfinished, .tip-finished {
+  position: absolute;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  z-index: 49;
+  top: 5px;
+  right: 5px;
+}
+
+.tip-unfinished {
+  background-color: red;
+}
+
+.tip-finished {
+  background-color: green;
+}
+
+/* .color-yellow{
+	background-color: yellow;
+} */
+.totalProcess {
+  margin-top: -60px;
+}
+.totalProcess .dayProcess {
+  background-color: green;
+}
+
+#calender-day {
+  display: none;
+}
+
+.toSmall {
+  -webkit-transform: translateX(-50%) scale(0.5);
+}
+
+.toLarge {
+  -webkit-transform: translateX(0) scale(1);
+}
+
+.dayDetailShow {
+  -webkit-transform: scale(1) !important;
+  -webkit-animation-name: dayDetailAmi;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.dayDetailHide {
+  -webkit-transform: scale(0) !important;
+}
+
+@-webkit-keyframes dayDetailAmi {
+  100% {
+    left: 300px;
+    top: 50px;
+  }
+}
+.calenderBody {
+  -webkit-transition: 500ms;
+}
+
+.details > div {
+  width: 45%;
+}
+.details > div:last-child {
+  float: right;
+}
+.details .projectDetail {
+  display: none;
+}
+.details .timeCF {
+  font-size: 12px;
+}
+
+.updateTime {
+  position: absolute;
+  right: 0;
+}
+
+.showDetail {
+  -webkit-transition: all 1s;
+  -webkit-transform: rotate(180deg);
+}
